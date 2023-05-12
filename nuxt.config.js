@@ -1,4 +1,5 @@
 export default {
+  ssr: true,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'scanner',
@@ -15,10 +16,10 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['@/assets/css/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [{ src: '~/plugins/web3.js' }, { src: '~/plugins/element-ui.js' }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -30,8 +31,16 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ['@nuxtjs/axios'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  env: {
+    network: process.env.ETHEREUM_NETWORK,
+    apiKey: process.env.INFURA_API_KEY,
+    privateKey: process.env.SIGNER_PRIVATE_KEY,
+    sepoliaURL: process.env.SEPOLIA_URL,
+    abiURL: process.env.ABI_URL,
+  },
 }

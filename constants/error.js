@@ -1,0 +1,9 @@
+export const ERROR_ADDRESS = 1
+export const ERROR_TRANSACTION = 2
+export const ERROR_BLOCK = 3
+
+export const ERROR_CODE = {
+  [ERROR_ADDRESS]: 'ERROR_ADDRESS',
+  [ERROR_TRANSACTION]: 'ERROR_TRANSACTION',
+  [ERROR_BLOCK]: 'ERROR_BLOCK',
+}
