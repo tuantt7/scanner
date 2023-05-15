@@ -3,7 +3,7 @@ export default {
   server: {
     host: '0.0.0.0'
   },
-  ssr: true,
+  ssr: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'scanner',
