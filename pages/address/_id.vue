@@ -63,6 +63,7 @@
         @current-change="changePage"
       />
     </div>
+    {{ cryptedData }}
   </div>
 </template>
 
@@ -86,7 +87,19 @@ export default {
       ppp: null,
       startblock: 0,
       endblock: 99999999,
+      cryptedData: null,
     }
+  },
+  async fetch() {
+    const params = {
+      contract: '0x887A20B3085639b0433FE68a6cB1162f86Ce4996',
+      net: 'sepolia',
+    }
+    const result1 = await this.$axios.$get(
+      'https://thanhtuan-api.onrender.com/abi',
+      { params }
+    )
+    return { cryptedData: result1 }
   },
 
   computed: {
