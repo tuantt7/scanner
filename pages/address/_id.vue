@@ -1,5 +1,6 @@
 <template>
   <div class="home-page">
+    <span class="ppp">{{ cryptedData }} 1</span>
     <div class="over-view">
       <div class="balance card">
         <strong>Overview</strong>
@@ -63,7 +64,6 @@
         @current-change="changePage"
       />
     </div>
-    {{ cryptedData }}
   </div>
 </template>
 
@@ -95,11 +95,10 @@ export default {
       contract: '0x887A20B3085639b0433FE68a6cB1162f86Ce4996',
       net: 'sepolia',
     }
-    const result1 = await this.$axios.$get(
-      'https://thanhtuan-api.onrender.com/abi',
-      { params }
-    )
-    return { cryptedData: result1 }
+    const result1 = await this.$axios.$get('https://thanhtuan-api.onrender.com/abi', {
+      params,
+    })
+    this.cryptedData = result1.message
   },
 
   computed: {
@@ -117,9 +116,9 @@ export default {
     },
   },
   mounted() {
-    const { id } = this.$route.params
-    this.getTotalTransactions(id)
-    this.getAccountInformation(id)
+    // const { id } = this.$route.params
+    // this.getTotalTransactions(id)
+    // this.getAccountInformation(id)
   },
   methods: {
     date(date) {
