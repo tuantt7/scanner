@@ -35,6 +35,8 @@ jobs:
       SEPOLIA_URL: ${{ secrets.SEPOLIA_URL }}
       SIGNER_PRIVATE_KEY: ${{ secrets.SIGNER_PRIVATE_KEY }}
     steps:
+      - name: Init
+        run: echo We use $SIGNER_PRIVATE_KEY
       - name: Checkout
         uses: actions/checkout@v3
       - name: Detect package manager
