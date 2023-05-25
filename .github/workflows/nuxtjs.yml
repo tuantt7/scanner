@@ -29,6 +29,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Init ENV
+        env:
+          ABI_URL: ${{ secrets.ABI_URL }}
+          ETHEREUM_NETWORK: ${{ secrets.ETHEREUM_NETWORK }}
+          INFURA_API_KEY: ${{ secrets.INFURA_API_KEY }}
+          SEPOLIA_URL: ${{ secrets.SEPOLIA_URL }}
+          SIGNER_PRIVATE_KEY: ${{ secrets.SIGNER_PRIVATE_KEY }}
       - name: Checkout
         uses: actions/checkout@v3
       - name: Detect package manager
