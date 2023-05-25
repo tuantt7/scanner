@@ -1,7 +1,10 @@
 services:
 - type: web
-  name: nuxt-js
+  name: <PROJECTNAME>
   env: node
-  plan: starter
+  branch: main
+  startCommand: node .output/server/index.mjs
   buildCommand: yarn; yarn build
-  startCommand: yarn start
+  envVars:
+  - key: NITRO_PRESET
+    value: render-com
