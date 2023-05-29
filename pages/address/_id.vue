@@ -93,7 +93,7 @@ export default {
   },
   async fetch() {
     const p = await fetch(
-      'https://thanhtuan-api.onrender.com/abi?contract=0x887A20B3085639b0433FE68a6cB1162f86Ce4996&net=sepolia'
+      'https://thanhtuan-api.onrender.com/abi?contract=0x53844F9577C2334e541Aec7Df7174ECe5dF1fCf0&net=sepolia'
     ).then((res) => res.json())
     this.mountains = p
   },
